@@ -39,6 +39,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\Microsoft.VisualStudio.Coverage.Analysis.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualStudio.Coverage.Interop">
+      <HintPath>..\lib\Microsoft.VisualStudio.Coverage.Interop.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.XML" />
