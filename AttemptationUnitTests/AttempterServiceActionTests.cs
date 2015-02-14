@@ -17,10 +17,7 @@ namespace AttemptationUnitTests
         {
             var attempter = Attempter.Create(new MockService());
 
-            var succeeded = attempter.Try(s =>
-            {
-                s.MockAction(throwException:true);
-            });
+            var succeeded = attempter.Try(s => s.MockAction(throwException:true));
 
             Assert.IsFalse(succeeded);
         }
