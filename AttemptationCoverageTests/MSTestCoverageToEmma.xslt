@@ -20,28 +20,19 @@
       <xsl:value-of select="count(//Method[child::BlocksCovered[1] != 0])"/>
     </xsl:variable>
 
-    <!--
-<xsl:variable name="CoveredBlocks"><xsl:value-of select="Module/BlocksCovered"/></xsl:variable>
-<xsl:variable name="TotalBlocks"><xsl:value-of select="Module/BlocksCovered + Module/BlocksNotCovered"/></xsl:variable>
-
-<xsl:variable name="TotalLines"><xsl:value-of select="Module/LinesCovered + Module/LinesPartiallyCovered + Module/LinesNotCovered"/></xsl:variable>
-<xsl:variable name="CoveredLines"><xsl:value-of select="Module/LinesCovered"/></xsl:variable>
--->
-
     <xsl:variable name="CoveredBlocks">
-      <xsl:value-of select="sum(Module/BlocksCovered)"/>
+      <xsl:value-of select="Module/BlocksCovered"/>
     </xsl:variable>
     <xsl:variable name="TotalBlocks">
-      <xsl:value-of select="sum(Module/BlocksCovered) + sum(Module/BlocksNotCovered)"/>
+      <xsl:value-of select="Module/BlocksCovered + Module/BlocksNotCovered"/>
     </xsl:variable>
 
     <xsl:variable name="TotalLines">
-      <xsl:value-of select="sum(Module/LinesCovered) + sum(Module/LinesPartiallyCovered) + sum(Module/LinesNotCovered)"/>
+      <xsl:value-of select="Module/LinesCovered + Module/LinesPartiallyCovered + Module/LinesNotCovered"/>
     </xsl:variable>
     <xsl:variable name="CoveredLines">
-      <xsl:value-of select="sum(Module/LinesCovered)"/>
+      <xsl:value-of select="Module/LinesCovered"/>
     </xsl:variable>
-
 
     <xsl:value-of select="$newline"/>
     <xsl:value-of select="$newline"/>
