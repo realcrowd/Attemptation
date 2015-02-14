@@ -106,7 +106,7 @@ namespace AttemptationCoverageTests
         {
             XslCompiledTransform myXslTransform;
             myXslTransform = new XslCompiledTransform();
-            myXslTransform.Load("MSTestCoverageToEmma.xslt");
+            myXslTransform.Load(System.IO.Path.Combine(path, @"AttemptationUnitTests\bin\Release\MSTestCoverageToEmma.xslt"));
             myXslTransform.Transform(System.IO.Path.Combine(path, @"test-coverage.xml"), System.IO.Path.Combine(path, @"emma-test-coverage.xml"));
         }
 
