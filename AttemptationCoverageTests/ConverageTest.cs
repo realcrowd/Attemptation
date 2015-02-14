@@ -71,7 +71,7 @@ namespace AttemptationCoverageTests
             CoverageStatistics stats;
 
             var dir = new System.IO.DirectoryInfo(Directory.GetCurrentDirectory());
-            var path = dir.Parent.Parent.Parent.FullName;
+            var path = dir.Parent.Parent.FullName;
             
             var symbolsDir = System.IO.Path.Combine(path, @"AttemptationUnitTests\bin\Release");
             var sourceFile = System.IO.Path.Combine(path, @"test-coverage.coverage");
