@@ -92,7 +92,7 @@ namespace AttemptationCoverageTests
 
                 dataSet.ExportXml(outputFile);
                 stats = GetStatsInfo(info);
-                CovertToEmma();
+                CovertToEmma(path);
             }
 
             Console.WriteLine("    {0} total blocks covered", stats.BlocksCovered);
@@ -102,12 +102,12 @@ namespace AttemptationCoverageTests
             Console.WriteLine("    {0} total lines not covered", stats.LinesNotCovered);
         }
 
-        private static void CovertToEmma()
+        private static void CovertToEmma(string path)
         {
             XslCompiledTransform myXslTransform;
             myXslTransform = new XslCompiledTransform();
             myXslTransform.Load("MSTestCoverageToEmma.xslt");
-            myXslTransform.Transform("test-coverage.xml", "emma-test-coverage.xml");
+            myXslTransform.Transform(System.IO.Path.Combine(path, @"test-coverage.xml"), System.IO.Path.Combine(path, @"emma-test-coverage.xml"));
         }
 
         private static CoverageStatistics GetStatsInfo(CoverageInfo info)
