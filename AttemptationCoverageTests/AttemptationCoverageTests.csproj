@@ -66,6 +66,7 @@
     <Content Include="Microsoft.VisualStudio.Coverage.Symbols.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="MSTestCoverageToEmma.xslt" />
   </ItemGroup>
   <ItemGroup />
   <Choose>

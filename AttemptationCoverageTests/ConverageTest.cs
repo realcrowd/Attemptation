@@ -7,6 +7,7 @@ using Microsoft.VisualStudio.Coverage.Analysis;
 using System.IO;
 using System.Linq;
 using System.Collections.Generic;
+using System.Xml.Xsl;
 
 namespace AttemptationCoverageTests
 {
@@ -64,7 +65,7 @@ namespace AttemptationCoverageTests
 
 
             ////Microsoft.VisualStudio.Coverage.Monitor.dll
-            
+
             //output = Run(coverageProcess);
 
             //Console.WriteLine(output);
@@ -72,7 +73,7 @@ namespace AttemptationCoverageTests
 
             var dir = new System.IO.DirectoryInfo(Directory.GetCurrentDirectory());
             var path = dir.Parent.Parent.FullName;
-            
+
             var symbolsDir = System.IO.Path.Combine(path, @"AttemptationUnitTests\bin\Release");
             var sourceFile = System.IO.Path.Combine(path, @"test-coverage.coverage");
             //var symbolsDir = @"C:\Projects\Attemptation\AttemptationCoverageTests\bin\Debug";
@@ -91,6 +92,7 @@ namespace AttemptationCoverageTests
 
                 dataSet.ExportXml(outputFile);
                 stats = GetStatsInfo(info);
+                CovertToEmma();
             }
 
             Console.WriteLine("    {0} total blocks covered", stats.BlocksCovered);
@@ -98,6 +100,14 @@ namespace AttemptationCoverageTests
             Console.WriteLine("    {0} total lines covered", stats.LinesCovered);
             Console.WriteLine("    {0} total lines partially covered", stats.LinesPartiallyCovered);
             Console.WriteLine("    {0} total lines not covered", stats.LinesNotCovered);
+        }
+
+        private static void CovertToEmma()
+        {
+            XslCompiledTransform myXslTransform;
+            myXslTransform = new XslCompiledTransform();
+            myXslTransform.Load("MSTestCoverageToEmma.xslt");
+            myXslTransform.Transform("test-coverage.xml", "emma-test-coverage.xml");
         }
 
         private static CoverageStatistics GetStatsInfo(CoverageInfo info)
