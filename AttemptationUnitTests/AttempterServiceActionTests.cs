@@ -21,5 +21,15 @@ namespace AttemptationUnitTests
 
             Assert.IsFalse(succeeded);
         }
+
+        [TestMethod]
+        public void TryReturnsTrueOnSucceededAction()
+        {
+            var attempter = Attempter.Create(new MockService());
+
+            var succeeded = attempter.Try(s => s.MockAction(throwException: false));
+
+            Assert.IsTrue(succeeded);
+        }
     }
 }
