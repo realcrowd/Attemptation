@@ -92,11 +92,12 @@ namespace AttemptationCoverageTests
                 dataSet.ExportXml(outputFile);
                 stats = GetStatsInfo(info);
             }
-            Trace.WriteLine(string.Format("    {0} total blocks covered", stats.BlocksCovered), "info");
-            Trace.WriteLine(string.Format("    {0} total blocks not covered", stats.BlocksNotCovered), "info");
-            Trace.WriteLine(string.Format("    {0} total lines covered", stats.LinesCovered), "info");
-            Trace.WriteLine(string.Format("    {0} total lines partially covered", stats.LinesPartiallyCovered), "info");
-            Trace.WriteLine(string.Format("    {0} total lines not covered", stats.LinesNotCovered), "info");
+
+            Console.WriteLine("    {0} total blocks covered", stats.BlocksCovered);
+            Console.WriteLine("    {0} total blocks not covered", stats.BlocksNotCovered);
+            Console.WriteLine("    {0} total lines covered", stats.LinesCovered);
+            Console.WriteLine("    {0} total lines partially covered", stats.LinesPartiallyCovered);
+            Console.WriteLine("    {0} total lines not covered", stats.LinesNotCovered);
         }
 
         private static CoverageStatistics GetStatsInfo(CoverageInfo info)
