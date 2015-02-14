@@ -7,10 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Attemptation", "Attemptatio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttemptationUnitTests", "AttemptationUnitTests\AttemptationUnitTests.csproj", "{4D535D27-DCF4-44A6-8A16-A9CB7D172046}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5B1FA444-7073-4F4A-98BC-6D54C04A5113}"
-	ProjectSection(SolutionItems) = preProject
-		AttemptationUnitTests.testsettings = AttemptationUnitTests.testsettings
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttemptationCoverageTests", "AttemptationCoverageTests\AttemptationCoverageTests.csproj", "{504C0DEF-2ED7-4506-99DF-6488E763365D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +23,10 @@ Global
 		{4D535D27-DCF4-44A6-8A16-A9CB7D172046}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D535D27-DCF4-44A6-8A16-A9CB7D172046}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D535D27-DCF4-44A6-8A16-A9CB7D172046}.Release|Any CPU.Build.0 = Release|Any CPU
+		{504C0DEF-2ED7-4506-99DF-6488E763365D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{504C0DEF-2ED7-4506-99DF-6488E763365D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{504C0DEF-2ED7-4506-99DF-6488E763365D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{504C0DEF-2ED7-4506-99DF-6488E763365D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
