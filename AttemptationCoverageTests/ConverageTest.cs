@@ -108,6 +108,8 @@ namespace AttemptationCoverageTests
             myXslTransform = new XslCompiledTransform();
             myXslTransform.Load(System.IO.Path.Combine(path, @"AttemptationCoverageTests\bin\Release\MSTestCoverageToEmma.xslt"));
             myXslTransform.Transform(System.IO.Path.Combine(path, @"test-coverage.xml"), System.IO.Path.Combine(path, @"emma-test-coverage.xml"));
+
+            File.WriteAllText(System.IO.Path.Combine(path, @"emma-test-coverage.xml"), System.Text.RegularExpressions.Regex.Replace(File.ReadAllText(System.IO.Path.Combine(path, @"emma-test-coverage.xml")), @"&#xA;\s+""", ""));
         }
 
         private static CoverageStatistics GetStatsInfo(CoverageInfo info)
